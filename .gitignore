@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / compiled files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+venv/
+
+# Editor-specific files
+.vscode/ # VS Code
+
+# Django-specific files
+db.sqlite3
+media/ # User-uploaded media files
+local_settings.py # Or any file containing local/sensitive settings
+.env # Environment variables
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*~
+*.bak
