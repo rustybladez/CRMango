@@ -29,7 +29,25 @@
 
       <!-- Notification messages -->
 
-      {% block content %} {% endblock %}
+      {% for message in messages %}
+      
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+          <p id="message-timer" class="alert alert-success float-center text-center message-text">
+          
+            {{message}}
+          
+          </p>
+
+        {% endif %}
+
+      {% endfor %}
+
+
+      {% block content %} 
+      
+      {% endblock %}
+    
     </div>
 
     <script src="{% static 'js/app.js' %}"></script>
