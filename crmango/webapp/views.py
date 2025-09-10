@@ -5,6 +5,8 @@ from .forms import CreateUserForm, LoginForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 
+from django.contrib.auth.decorators import login_required
+
 # Homepage
 
 def home(request):
@@ -52,7 +54,7 @@ def my_login(request):
 
                 auth.login(request, user)
 
-                # return redirect("")
+                return redirect("dashboard")
     
     context = {'form':form}
 
@@ -66,3 +68,9 @@ def user_logout(request):
 
     return redirect("my-login")
 
+# Dashboard
+
+@login_required(login_url='my-login')
+def dashboard(request):
+
+    return render(request, 'webapp/dashboard.html')
